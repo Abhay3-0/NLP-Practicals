@@ -1,295 +1,602 @@
-# 🧠 Natural Language Processing — Unit 1 Practicals
+🧠 Natural Language Processing — Unit 1 Practicals
 
-Welcome to the **NLP Unit 1 Practicals** repository.
+Welcome to the Natural Language Processing (NLP) Unit 1 Practicals repository.
 
-This repository contains Python implementations of fundamental **Natural Language Processing techniques** using **NLTK, spaCy, and Regular Expressions**. These programs demonstrate how raw text can be processed and analyzed using different NLP techniques.
+This repository contains Python implementations of fundamental and intermediate Natural Language Processing techniques. These practicals demonstrate how raw text can be processed, transformed, analyzed, and used in various NLP applications using Python and libraries such as NLTK, spaCy, Gensim, and Scikit-learn.
 
----
-
-## 📌 Practical List
-
-| No. | Experiment | Technology |
-|:---:|---|---|
-| 01 | Sentence and Word Tokenization | NLTK, spaCy |
-| 02 | Stemming and Lemmatization | NLTK |
-| 03 | Stop-word Removal | NLTK |
-| 04 | Part-of-Speech Tagging | NLTK |
-| 05 | Parsing and Chunking | RegEx, NLTK, spaCy |
-| 06 | Named Entity Recognition | spaCy |
-
----
-
-## 📂 Repository Contents
-
-```text
-NLP-Unit-1-Practicals/
+📌 Practical List
+No.	Experiment	Description
+01	Tokenization	Splitting text into sentences and words
+08	Bag of Words (BOW)	Representing text using word frequencies
+09	TF-IDF	Measuring the importance of words in documents
+10	N-Gram Model	Analyzing sequences of words
+11	Cosine Similarity	Measuring similarity between text documents
+12	Word2Vec	Generating word embeddings using contextual relationships
+13	GloVe	Representing words using global co-occurrence statistics
+14	Word Mover's Distance (WMD)	Measuring semantic distance between documents
+15	Text Classification	Categorizing text into predefined classes
+16	Sentiment Analysis	Identifying positive, negative, or neutral sentiment
+17	Latent Dirichlet Allocation (LDA)	Discovering topics in a collection of documents
+18	Latent Semantic Analysis (LSA)	Discovering latent semantic relationships in text
+19	Opinion Mining	Extracting opinions and attitudes from text
+20	Information Extraction	Identifying structured information in unstructured text
+21	Information Retrieval	Finding relevant documents for a query
+Note: The screenshot also contains 02_stemming_lemmatization.py, 03_stopword_removal.py, 04_pos_tagging.py, 05_parsing_chunking.py, and 06_ner.py only if those files are present in your repository. The practical numbers above follow the filenames visible in the screenshot.
+📂 Repository Structure
+text
+NLP-Practicals/
 │
-├── 01_tokenization.py
-├── 02_stemming_lemmatization.py
-├── 03_stopword_removal.py
-├── 04_pos_tagging.py
-├── 05_parsing_chunking.py
-├── 06_ner.py
-│
-└── README.md
-```
-
----
-
-## 🔧 Requirements
-
-The programs require:
-
-- Python 3.x
-- NLTK
-- spaCy
-- English spaCy language model
-
-### Install Dependencies
-
-```bash
-pip install nltk spacy
-```
-
-Install the spaCy English model:
-
-```bash
-python -m spacy download en_core_web_sm
-```
-
----
-
-# 🧪 Experiments
-
-## 1️⃣ Tokenization
-
-Tokenization is the process of breaking a text into smaller units called **tokens**.
-
-The program demonstrates:
-
-- Sentence tokenization
-- Word tokenization
-- NLTK tokenization
-- spaCy tokenization
-
-Example:
-
-```text
-Input:
-Natural Language Processing is interesting.
-
-Output:
-Natural
-Language
-Processing
-is
-interesting
-```
-
----
-
-## 2️⃣ Stemming and Lemmatization
-
-This experiment demonstrates two important text normalization techniques.
-
-### Stemming
-
-Stemming attempts to reduce a word to its root form.
-
-```text
-playing → play
-```
-
-### Lemmatization
-
-Lemmatization converts words into their meaningful dictionary form.
-
-```text
-studies → study
-```
-
-The experiment uses the **Porter Stemmer** and **WordNet Lemmatizer** provided by NLTK.
-
----
-
-## 3️⃣ Stop-word Removal
-
-Stop-word removal eliminates commonly occurring words that may not provide significant information for certain NLP applications.
-
-Examples include:
-
-```text
-the
-is
-a
-an
-of
-and
-```
-
-The program:
-
-1. Tokenizes the input text.
-2. Loads English stop words.
-3. Compares each token with the stop-word list.
-4. Removes matching words.
-
----
-
-## 4️⃣ Part-of-Speech Tagging
-
-POS tagging assigns a grammatical category to every word in a sentence.
-
-Example:
-
-```text
-The → DT
-quick → JJ
-fox → NN
-jumps → VBZ
-```
-
-Some commonly used POS tags are:
-
-| Tag | Description |
-|---|---|
-| NN | Noun |
-| VB | Verb |
-| JJ | Adjective |
-| RB | Adverb |
-| DT | Determiner |
-| IN | Preposition |
-
----
-
-## 5️⃣ Parsing and Chunking
-
-This experiment explores the grammatical structure of sentences.
-
-### RegEx Chunking
-
-Regular expressions are used to identify patterns of POS tags and group words into phrases.
-
-Example:
-
-```text
-The young boy
-```
-
-can be identified as a **Noun Phrase (NP)**.
-
-### spaCy Parsing
-
-spaCy is used to examine:
-
-- Part of Speech
-- Dependency relationship
-- Head word
-- Noun phrases
-
----
-
-## 6️⃣ Named Entity Recognition
-
-Named Entity Recognition, or **NER**, identifies real-world entities present in text.
-
-For example:
-
-```text
-Google → ORG
-Abhay → PERSON
-Greater Noida → GPE
-```
-
-Common entity categories include:
-
-```text
-PERSON
-ORG
-GPE
-LOC
-DATE
-MONEY
-PRODUCT
-```
-
-The experiment uses the **spaCy English language model**.
-
----
-
-# ▶️ Running the Programs
-
-After installing the dependencies, execute any practical from the terminal.
-
-For example:
-
-```bash
-python 01_tokenization.py
-```
-
-Run the remaining programs using:
-
-```bash
-python 02_stemming_lemmatization.py
-python 03_stopword_removal.py
-python 04_pos_tagging.py
-python 05_parsing_chunking.py
-python 06_ner.py
-```
-
----
-
-# 🎯 Learning Objectives
-
-The practicals provide hands-on understanding of basic NLP operations, including:
-
-- Text tokenization
-- Text normalization
-- Stop-word filtering
-- Grammatical analysis
-- Phrase identification
-- Dependency parsing
-- Entity extraction
-
-These techniques form the foundation for more advanced NLP applications such as **text classification, sentiment analysis, information extraction, chatbots, and question-answering systems**.
-
----
-
-# 📚 Tools & Technologies
-
-**Programming Language**
-
-```text
-Python
-```
-
-**Libraries**
-
-```text
+└── Unit 1/
+    ├── 1_tokenization.py
+    ├── 08_BOW.py
+    ├── 09_TFIDF.py
+    ├── 10_NGram.py
+    ├── 11_Cosine_Similarity.py
+    ├── 12_Word2Vec.py
+    ├── 13_GloVe.py
+    ├── 14_WMD.py
+    ├── 15_Text_Classification.py
+    ├── 16_Sentiment_Analysis.py
+    ├── 17_LDA.py
+    ├── 18_LSA.py
+    ├── 19_Opinion_Mining.py
+    ├── 20_Information_Extraction.py
+    └── 21_Information_Retrieval.py
+
+🔧 Requirements
+Python 3.9 or later
 NLTK
 spaCy
-```
+NumPy
+Pandas
+Scikit-learn
+Gensim
+Matplotlib (optional, for visualizations)
 
-**Other Technology**
+The exact dependencies depend on the practical being executed.
 
-```text
-Regular Expressions
-```
+⚙️ Installation
+1. Clone the repository
+bash
+git clone <YOUR_REPOSITORY_URL>
+cd NLP-Practicals
 
----
 
-## 👨‍💻 Author
+Replace <YOUR_REPOSITORY_URL> with your GitHub repository URL.
 
-**Abhay Pratap Singh**
+2. Create a virtual environment (recommended)
+bash
+python -m venv venv
+
+
+Activate it on Windows:
+
+bash
+venv\Scripts\activate
+
+
+Activate it on Linux or macOS:
+
+bash
+source venv/bin/activate
+
+3. Install dependencies
+bash
+pip install nltk spacy numpy pandas scikit-learn gensim matplotlib
+
+4. Download required NLP resources
+
+For NLTK:
+
+python
+import nltk
+
+nltk.download('punkt')
+nltk.download('punkt_tab')
+nltk.download('stopwords')
+nltk.download('wordnet')
+nltk.download('omw-1.4')
+nltk.download('averaged_perceptron_tagger')
+nltk.download('averaged_perceptron_tagger_eng')
+
+
+For spaCy:
+
+bash
+python -m spacy download en_core_web_sm
+
+
+Some practicals may require additional corpora, pretrained embeddings, or datasets.
+
+🧪 Experiments
+1. Tokenization
+
+Tokenization is the process of splitting text into smaller units called tokens.
+
+Objectives:
+
+Perform word tokenization.
+Perform sentence tokenization.
+Understand basic text preprocessing.
+
+Example:
+
+Input:
+
+text
+Natural Language Processing is interesting.
+
+
+Output:
+
+text
+['Natural', 'Language', 'Processing', 'is', 'interesting', '.']
+
+
+Technologies: Python, NLTK, spaCy
+
+2. Bag of Words (BOW)
+
+The Bag of Words model represents a document as a vector of word counts, without considering word order.
+
+Objectives:
+
+Create a vocabulary from text.
+Convert documents into numerical vectors.
+Understand text vectorization.
+
+Example:
+
+Documents:
+
+text
+Document 1: I like NLP
+Document 2: I like Python
+
+
+Vocabulary:
+
+text
+['I', 'like', 'NLP', 'Python']
+
+
+Each document is represented by the frequencies of vocabulary terms.
+
+Technology: Scikit-learn
+
+File: 08_BOW.py
+
+3. TF-IDF (Term Frequency–Inverse Document Frequency)
+
+TF-IDF measures the importance of a word in a document relative to a collection of documents.
+
+Objectives:
+
+Calculate term importance.
+Convert text into weighted numerical vectors.
+Reduce the relative importance of common terms.
+
+Concept:
+Where:
+
+TF represents the frequency of a term in a document.
+IDF measures how rare or informative the term is across documents.
+
+Technology: Scikit-learn
+
+File: 09_TFIDF.py
+
+4. N-Gram Model
+
+An N-gram is a contiguous sequence of n tokens extracted from text.
+
+Types:
+
+Unigram: one word
+Bigram: two consecutive words
+Trigram: three consecutive words
+
+Example:
+
+Sentence:
+
+text
+Natural Language Processing is useful
+
+
+Bigrams:
+
+text
+Natural Language
+Language Processing
+Processing is
+is useful
+
+
+Applications:
+
+Language modeling
+Text prediction
+Text classification
+Phrase analysis
+
+File: 10_NGram.py
+
+5. Cosine Similarity
+
+Cosine similarity measures the similarity between two vectors by calculating the cosine of the angle between them.
+
+Cosine Similarity
+Objectives:
+
+Convert documents into vectors.
+Calculate similarity scores.
+Compare documents based on their textual content.
+
+A score closer to 1 generally indicates greater similarity for nonnegative text vectors.
+
+Applications:
+
+Document comparison
+Search engines
+Recommendation systems
+
+File: 11_Cosine_Similarity.py
+
+6. Word2Vec
+
+Word2Vec learns dense word embeddings from surrounding-word patterns in a text corpus.
+
+Architectures:
+
+CBOW (Continuous Bag of Words)
+Skip-gram
+
+Objectives:
+
+Generate vector representations of words.
+Explore relationships between words.
+Understand distributional semantics.
+
+Applications:
+
+Semantic similarity
+Text classification
+NLP feature extraction
+
+Technology: Gensim
+
+File: 12_Word2Vec.py
+
+7. GloVe (Global Vectors for Word Representation)
+
+GloVe is a word-embedding technique that learns vector representations using global word co-occurrence statistics.
+
+Objectives:
+
+Understand pretrained word embeddings.
+Represent words as dense numerical vectors.
+Explore semantic relationships between words.
+
+Applications:
+
+Semantic analysis
+Text classification
+Information retrieval
+
+Note: Unlike Word2Vec, GloVe is commonly used through pretrained vectors or a separate training implementation. The practical may require downloading a pretrained embedding file.
+
+File: 13_GloVe.py
+
+8. Word Mover's Distance (WMD)
+
+Word Mover's Distance measures the semantic distance between two documents by calculating the minimum transport cost required to move the word embeddings of one document to match those of another.
+
+Objectives:
+
+Compare documents using word embeddings.
+Understand semantic distance.
+Examine similarities that simple word-overlap methods may miss.
+
+Applications:
+
+Document clustering
+Semantic search
+Document similarity analysis
+
+Note: WMD requires suitable word embeddings and may need additional Gensim configuration.
+
+File: 14_WMD.py
+
+9. Text Classification
+
+Text classification assigns predefined categories or labels to text.
+
+Objectives:
+
+Prepare and preprocess text data.
+Extract numerical text features.
+Train a classification model.
+Predict labels for new text.
+
+Common algorithms:
+
+Naive Bayes
+Logistic Regression
+Support Vector Machines (SVM)
+
+Applications:
+
+Spam detection
+News categorization
+Topic classification
+Document labeling
+
+File: 15_Text_Classification.py
+
+10. Sentiment Analysis
+
+Sentiment analysis determines the emotional polarity or opinion expressed in a text.
+
+Common categories:
+
+Positive
+Negative
+Neutral
+
+Example:
+
+Input:
+
+text
+The movie was excellent and enjoyable.
+
+
+Expected interpretation:
+
+text
+Positive sentiment
+
+
+Applications:
+
+Product reviews
+Customer feedback analysis
+Social media monitoring
+Brand reputation analysis
+
+File: 16_Sentiment_Analysis.py
+
+11. Latent Dirichlet Allocation (LDA)
+
+LDA is a probabilistic topic-modeling algorithm that discovers hidden topics in a collection of documents.
+
+Objectives:
+
+Identify recurring themes.
+Represent documents as topic distributions.
+Represent topics as word distributions.
+
+Applications:
+
+Document clustering
+Research paper analysis
+News topic discovery
+Large-scale text exploration
+
+Technology: Gensim or Scikit-learn
+
+File: 17_LDA.py
+
+12. Latent Semantic Analysis (LSA)
+
+LSA identifies latent semantic patterns in a document-term matrix, typically using Singular Value Decomposition (SVD).
+
+Objectives:
+
+Reduce the dimensionality of text representations.
+Discover underlying semantic relationships.
+Compare documents using reduced-dimensional vectors.
+
+Applications:
+
+Document similarity
+Search engines
+Information retrieval
+Semantic indexing
+
+Technology: Scikit-learn
+
+File: 18_LSA.py
+
+13. Opinion Mining
+
+Opinion mining extracts opinions, attitudes, and sentiment from textual data. It is closely related to sentiment analysis and may include aspect-based analysis.
+
+Objectives:
+
+Identify subjective statements.
+Determine opinion polarity.
+Analyze opinions about specific products, services, or features.
+
+Example:
+
+Input:
+
+text
+The camera is excellent, but the battery life is poor.
+
+
+Possible interpretation:
+
+text
+Camera: Positive
+Battery life: Negative
+
+
+Applications:
+
+Product review analysis
+Customer satisfaction measurement
+Feedback summarization
+Market research
+
+File: 19_Opinion_Mining.py
+
+14. Information Extraction
+
+Information extraction identifies useful structured information from unstructured text.
+
+Techniques may include:
+
+Named Entity Recognition (NER)
+Entity identification
+Relationship extraction
+Pattern matching with regular expressions
+
+Example:
+
+Input:
+
+text
+Google opened a new office in London.
+
+
+Possible extracted entities:
+
+text
+Google  -> ORGANIZATION
+London  -> LOCATION
+
+
+Applications:
+
+Knowledge graph construction
+Automated document processing
+Entity extraction
+Business intelligence
+
+Technology: spaCy, NLTK, Regular Expressions
+
+File: 20_Information_Extraction.py
+
+15. Information Retrieval
+
+Information retrieval is the process of finding relevant documents from a collection in response to a user's query.
+
+Objectives:
+
+Process user queries.
+Represent documents numerically.
+Rank documents by relevance.
+Return the most relevant results.
+
+Common techniques:
+
+TF-IDF
+Cosine similarity
+Inverted indexing
+Query-document matching
+
+Example:
+
+Query:
+
+text
+machine learning applications
+
+
+The system ranks documents according to how closely they match the query.
+
+Applications:
+
+Search engines
+Digital libraries
+Document search systems
+Question-answering systems
+
+File: 21_Information_Retrieval.py
+
+▶️ Running the Practicals
+
+Navigate to the Unit 1 directory:
+
+bash
+cd "Unit 1"
+
+
+Run any practical using Python:
+
+bash
+python 1_tokenization.py
+python 08_BOW.py
+python 09_TFIDF.py
+python 10_NGram.py
+python 11_Cosine_Similarity.py
+python 12_Word2Vec.py
+python 13_GloVe.py
+python 14_WMD.py
+python 15_Text_Classification.py
+python 16_Sentiment_Analysis.py
+python 17_LDA.py
+python 18_LSA.py
+python 19_Opinion_Mining.py
+python 20_Information_Extraction.py
+python 21_Information_Retrieval.py
+
+
+Run each command separately. Make sure any required datasets, pretrained embeddings, and language models have been installed or downloaded.
+
+🎯 Learning Objectives
+
+After completing these practicals, students should be able to:
+
+Understand fundamental NLP concepts and text preprocessing.
+Convert text into numerical representations.
+Apply statistical and semantic text-similarity methods.
+Understand word embeddings and their applications.
+Build basic text-classification and sentiment-analysis systems.
+Explore topic modeling and latent semantic structures.
+Extract entities, opinions, and useful information from text.
+Understand the basic workflow of information retrieval systems.
+🛠️ Tools and Technologies
+Tool	Purpose
+Python	Programming language
+NLTK	Text processing and linguistic analysis
+spaCy	NLP pipelines and entity extraction
+Scikit-learn	Vectorization, similarity, and machine learning
+Gensim	Word embeddings and topic modeling
+NumPy	Numerical computations
+Pandas	Data handling
+Regular Expressions	Pattern matching and text extraction
+📚 Applications of NLP
+
+The techniques implemented in this repository provide a foundation for building:
+
+Chatbots and conversational assistants
+Search engines
+Text summarization systems
+Sentiment-analysis applications
+Document classification systems
+Recommendation systems
+Question-answering systems
+Information extraction pipelines
+👨‍💻 Author
+
+Abhay Pratap Singh
 
 B.Tech — Computer Science / Artificial Intelligence
 
----
+📄 Academic Information
+Course: Natural Language Processing
+Unit: Unit 1
+Course Outcome: CO1
+🤝 Contributing
 
-## 📄 Academic Information
+This repository is intended for academic learning and experimentation. Suggestions, improvements, and corrections are welcome.
 
-**Course:** Natural Language Processing  
-**Unit:** Unit 1  
-**Course Outcome:** CO1  
+⭐ Support
 
-> This repository is maintained for academic learning and practical implementation of fundamental NLP concepts.
+If this repository helps you understand NLP concepts or prepare for practical examinations, consider giving it a ⭐ on GitHub.
+
+This repository is maintained for educational purposes and practical implementation of Natural Language Processing techniques.
